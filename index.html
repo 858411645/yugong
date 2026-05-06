@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>愚公移山</title>
+<link rel="stylesheet" href="src/game/style.css">
+</head>
+<body>
+<div class="game-container">
+  <div class="top-bar">
+    <div class="stat">
+      <span class="stat-icon">⛰</span>
+      <span class="stat-label">泥土</span>
+      <span class="stat-value" id="dirt">0</span>
+    </div>
+    <div class="stat">
+      <span class="stat-icon">🪨</span>
+      <span class="stat-label">石块</span>
+      <span class="stat-value" id="stone">0</span>
+    </div>
+    <div class="stat">
+      <span class="stat-icon">👨‍👦</span>
+      <span class="stat-label">子孙</span>
+      <span class="stat-value" id="descCount">0</span>
+    </div>
+    <div>
+      <button class="save-btn" id="saveBtn">保存</button>
+      <button class="reset-btn" id="resetBtn">重置</button>
+    </div>
+  </div>
+
+  <div class="mountain-area">
+    <div class="mountain-name">王屋山</div>
+    <div class="progress-wrap">
+      <div class="progress-bar" id="progressBar"></div>
+      <div class="progress-text" id="progressText">0%</div>
+    </div>
+    <div class="mountain" id="mountain">
+      <div class="mountain-visual">⛰️</div>
+      <div class="click-hint">点击挖山</div>
+    </div>
+    <div class="click-value" id="clickValue"></div>
+    <div class="per-second">每秒产出: <span id="perSec">0</span></div>
+  </div>
+
+  <div class="panels">
+    <div class="panel-tabs">
+      <button class="tab active" data-tab="upgrades">升级</button>
+      <button class="tab" data-tab="descendants">招工</button>
+    </div>
+
+    <div class="panel-content" id="upgradesPanel">
+    </div>
+
+    <div class="panel-content hidden" id="descendantsPanel">
+    </div>
+  </div>
+</div>
+
+<div class="modal hidden" id="resetModal">
+  <div class="modal-content">
+    <p>确定重置所有进度？此操作不可撤销。</p>
+    <button class="save-btn" id="confirmReset">确定</button>
+    <button class="reset-btn" id="cancelReset">取消</button>
+  </div>
+</div>
+
+<script src="src/game/data.js"></script>
+<script src="src/game/main.js"></script>
+</body>
+</html>
