@@ -5,67 +5,56 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 <title>愚公移山</title>
 <link rel="stylesheet" href="src/game/style.css">
+<link rel="manifest" href="manifest.webmanifest">
 </head>
 <body>
 <div class="game-container">
   <div class="top-bar">
-    <div class="stat">
-      <span class="stat-icon">⛰</span>
-      <span class="stat-label">泥土</span>
-      <span class="stat-value" id="dirt">0</span>
-    </div>
-    <div class="stat">
-      <span class="stat-icon">🪨</span>
-      <span class="stat-label">石块</span>
-      <span class="stat-value" id="stone">0</span>
-    </div>
-    <div class="stat">
-      <span class="stat-icon">👨‍👦</span>
-      <span class="stat-label">子孙</span>
-      <span class="stat-value" id="descCount">0</span>
-    </div>
-    <div>
+    <div class="stat"><span class="stat-icon">🪏</span><span class="stat-label">泥土</span><span class="stat-value" id="dirt">0</span></div>
+    <div class="stat"><span class="stat-icon">🪨</span><span class="stat-label">石料</span><span class="stat-value" id="stone">0</span></div>
+    <div class="stat"><span class="stat-icon">🌾</span><span class="stat-label">粮食</span><span class="stat-value" id="food">0</span></div>
+    <div class="stat"><span class="stat-icon">👥</span><span class="stat-label">人口</span><span class="stat-value" id="population">0/0</span></div>
+    <div class="stat"><span class="stat-icon">功</span><span class="stat-label">功德</span><span class="stat-value" id="merit">0</span></div>
+    <div class="actions">
       <button class="save-btn" id="saveBtn">保存</button>
+      <button class="save-btn" id="exportBtn">导出</button>
+      <button class="save-btn" id="importBtn">导入</button>
       <button class="reset-btn" id="resetBtn">重置</button>
+      <input class="hidden" type="file" id="importFile" accept="application/json,.json">
     </div>
   </div>
-
   <div class="mountain-area">
-    <div class="mountain-name">王屋山</div>
-    <div class="progress-wrap">
-      <div class="progress-bar" id="progressBar"></div>
-      <div class="progress-text" id="progressText">0%</div>
-    </div>
-    <div class="mountain" id="mountain">
-      <div class="mountain-visual">⛰️</div>
-      <div class="click-hint">点击挖山</div>
-    </div>
+    <div class="mountain-name" id="mountainName">王屋山 · 第 1 座</div>
+    <div class="mountain-trait" id="mountainTrait"></div>
+    <div class="guide-box" id="guideBox"></div>
+    <div class="progress-wrap"><div class="progress-bar" id="progressBar"></div><div class="progress-text" id="progressText">0%</div></div>
+    <div class="mountain" id="mountain"><div class="mountain-visual">⛰️</div><div class="click-hint">点击开山</div></div>
     <div class="click-value" id="clickValue"></div>
-    <div class="per-second">每秒产出: <span id="perSec">0</span></div>
+    <div class="per-second">每秒产出: <span id="perSec">0</span> ｜ 士气 <span id="morale">100%</span></div>
+    <button class="prestige-btn hidden" id="prestigeBtn">征服当前山脉</button>
   </div>
-
   <div class="panels">
     <div class="panel-tabs">
       <button class="tab active" data-tab="upgrades">升级</button>
-      <button class="tab" data-tab="descendants">招工</button>
+      <button class="tab" data-tab="descendants">子民</button>
+      <button class="tab" data-tab="tech">科技</button>
+      <button class="tab" data-tab="village">村庄</button>
+      <button class="tab" data-tab="cycle">循环</button>
     </div>
-
-    <div class="panel-content" id="upgradesPanel">
-    </div>
-
-    <div class="panel-content hidden" id="descendantsPanel">
-    </div>
+    <div class="panel-content" id="upgradesPanel"></div>
+    <div class="panel-content hidden" id="descendantsPanel"></div>
+    <div class="panel-content hidden" id="techPanel"></div>
+    <div class="panel-content hidden" id="villagePanel"></div>
+    <div class="panel-content hidden" id="cyclePanel"></div>
   </div>
 </div>
-
 <div class="modal hidden" id="resetModal">
   <div class="modal-content">
-    <p>确定重置所有进度？此操作不可撤销。</p>
-    <button class="save-btn" id="confirmReset">确定</button>
+    <p>确定要重置当前存档吗？这会清空当前进度，但保留核心配置。</p>
+    <button class="save-btn" id="confirmReset">确认重置</button>
     <button class="reset-btn" id="cancelReset">取消</button>
   </div>
 </div>
-
 <script src="src/game/data.js"></script>
 <script src="src/game/main.js"></script>
 </body>

@@ -1,0 +1,18 @@
+{
+  "name": "愚公移山",
+  "short_name": "愚公移山",
+  "description": "放置点击类愚公移山游戏。",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#d8edf0",
+  "theme_color": "#252523",
+  "lang": "zh-CN",
+  "icons": [
+    {
+      "src": "assets/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

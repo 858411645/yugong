@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="愚公移山">
+  <rect width="256" height="256" rx="48" fill="#d8edf0"/>
+  <path d="M42 198L104 96l34 44 28-32 48 90H42z" fill="#5f4a24"/>
+  <path d="M82 198l42-63 24 31 18-20 36 52H82z" fill="#8c7a48"/>
+  <circle cx="193" cy="72" r="18" fill="#f2d25c"/>
+</svg>
