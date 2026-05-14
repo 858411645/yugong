@@ -1,6 +1,0 @@
-{"file": ".trellis/spec/frontend/index.md", "reason": "Frontend project conventions"}
-{"file": ".trellis/spec/frontend/directory-structure.md", "reason": "Where different file types go"}
-{"file": ".trellis/spec/frontend/component-guidelines.md", "reason": "Component patterns and props conventions"}
-{"file": ".trellis/spec/frontend/quality-guidelines.md", "reason": "Linting and testing requirements"}
-{"file": ".trellis/spec/guides/code-reuse-thinking-guide.md", "reason": "Code reuse best practices"}
-{"file": ".trellis/tasks/05-06-yugong-game/prd.md", "reason": "Full M1 requirements"}
